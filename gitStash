@@ -1,0 +1,9 @@
+1. git stash
+   当在develop分支进行开发工作时，遇到了需要立即处理的任务。而这时开发任务还不能提交。
+   使用git stash可以保存目前分支的信息，然后切换master分支，创建issue分支，完成需要处理的任务，当然这个任务最好与develop分支没有交集。最后将issue， master进行合并。
+
+2. 恢复现场
+   1. git stash list: 查看已有的stash工作内容
+   2. git stash apply stash@{id}: 根据id恢复分支工作内容
+   3. git stash drop stash@{id}: 根据id删除分支工作内容
+   4. git stash pop: 包含2,3的功能
