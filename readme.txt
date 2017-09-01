@@ -5,4 +5,4 @@ Git trackis changes of files.
 release ==> develop  master
 reature ==> develop
 fixbug ==> develop master
-creating a branch is very simple && quick!
+creating a branch is very simple && quick
