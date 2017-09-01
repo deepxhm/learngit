@@ -36,7 +36,7 @@ git 分支管理策略
          git branch -d fixbug-1.2
 
 
-Aggregation
+branch manage command 
 
 	查看分支：git branch
 
