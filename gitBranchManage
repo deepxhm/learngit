@@ -1,0 +1,37 @@
+git 分支管理策略
+1. git是分布式版本管理系统。
+
+2. 版本库的管理工作
+   <1> git初始化会创建git分支，默认情况下，创建的是主分支，即master。如果没有创建工作分支的话，默认开发是在master分支上进行的。
+   <2> git的工作分支，又称为work分支或develop分支。master分支是提供给用户的正式版本。develop分支是根据master创建的，最终需要和master分支合并。也就是说，在develop分支开发完毕，需要将其分支内容合并到master分支上。
+      (1)基于主分支创建工作分支
+         git checkout -b develop master
+      (2)切换到主分支master
+         git checkout master
+      (3)合并develop分支到master分支。 参数--on-ff表示正常合并
+         git merge --no-ff develop
+   <3>其他常用的临时分支
+      (1)release: 预测版本分支。就是在master正式版本发布之前，用于预测的，应用在开发人员内部。这个分支是从develop分支上创建的，最终要合并develop和master分支上。         git checkout -b release-1.2 develop
+         之后将这个release合并到developter分支
+         git checkout master
+         git merge --no-ff release-1.2
+         并且在主分支做一个标签
+         git tag -a 1.2
+         develop的合并与master一样
+      (2)feature: 功能分支，这个分支是为了完成开发某项功能的，从develop分支上创建出来的，完成功能后需要合并到develop分支上的。在完成这项开发功能后，就把这个feature分支删掉。
+         git checkout -b feature-pay develop
+         git checkout develop
+         git merge --no-ff feature-pay
+         git branch -d feature-pay
+      (3)fixbug: 修补代码中的bug，是从master分支创建的，但是也要合并到develop，和master分支。
+         创建分支
+         git checkout -b fixbug-1.2 master
+         git merge --no-ff fixbug-1.2
+         添加标签
+         git tag -a 1.2'
+         同时，需要合并到develop分支
+         git checkout develop
+         git merge --no-ff fixbug-1.2
+         保持分支的整洁，用完即删
+         git branch -d fixbug-1.2
+  
