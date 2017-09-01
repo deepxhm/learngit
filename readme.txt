@@ -6,3 +6,5 @@ release ==> develop  master
 reature ==> develop
 fixbug ==> develop master
 creating a branch is very simple and quick
+
+stash
