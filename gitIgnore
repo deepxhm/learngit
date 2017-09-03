@@ -1,0 +1,22 @@
+<1>.gitignore文件内容
+
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+
+# My configurations:
+db.ini
+deploy_key_rsa
+
+<2>当需要忽略某些文件时，需要编写.gitignore。这样在提交时候就可以忽略特定的文件。
+
+.gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理！
