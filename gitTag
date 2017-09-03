@@ -1,0 +1,6 @@
+<1>git tag -a tagname -m "description" commit_id
+   这个命令可以为commit打上标签，比如版本号等等。忘记某次commit打标签时，可以通过git log --pretty=oneline命令
+<2>git show <tagname>
+   展示关于该tagname的信息
+<3>git tag
+   显示所有的tagname
